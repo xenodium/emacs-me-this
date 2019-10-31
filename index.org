@@ -1,0 +1,70 @@
+#+REVEAL_ROOT: file:///..path..to../reveal.js-3.8.0
+#+REVEAL_THEME: White
+#+REVEAL_TITLE_SLIDE: Emacs me this
+* Installing Emacs
+
+- On macOS, I like [[https://github.com/d12frosted/homebrew-emacs-plus][Emacs Plus]].
+- Install via [[https://brew.sh/][homebrew]]:
+
+#+begin_src sh
+  brew tap d12frosted/emacs-plus
+  brew install emacs-plus --without-spacemacs-icon --with-no-frame-refocus
+#+end_src
+
+* Frame, window, buffer, file
+
+| Emacs  | Rest of World        |
+|--------+----------------------|
+| Frame  | Window               |
+| Window | Panel                |
+| Buffer | /internal text object/ |
+| Point  | Cursor               |
+
+* Frame, window, buffer, file
+
+#+begin_src ditaa :exports results :file frame-window-buffer-file.png :cmdline -E
+
+  +--------------------+
+  | x                  |
+  +--------------------+
+  |                  --|---> text buffer
+  |                    |         |
+  |             window |         +-----> file
+  +--------------------+
+  |                  --|---> text buffer
+  |                    |         |
+  |             window |         +-----> file
+  +--------------------+
+          frame
+
+#+end_src
+
+* Screen organization
+
+#+begin_src ditaa :exports results :file screen.png :cmdline -E
+  +-----------------------------------+
+  | x                                 |
+  +-----------------------------------+
+  | menu bar                          |
+  +-----------------------------------+
+  |                            window |
+  |                                   |
+  |                                   |
+  |                                   |
+  |                                   |
+  +-----------------------------------+
+  | mode line                         |
+  +-----------------------------------+
+  | echo area                         |
+  +-----------------------------------+
+
+#+end_src
+
+* Kill, copy, yank, region
+
+| Emacs  | Rest of World   |
+|--------+-----------------|
+| Kill   | Cut             |
+| Copy   | Save            |
+| Yank   | Paste           |
+| Region | Selection       |
