@@ -22,7 +22,7 @@
 
 * Frame, window, buffer, file
 
-#+begin_src ditaa :exports results :file frame-window-buffer-file.png :cmdline -E
+#+begin_src ditaa :file frame-window-buffer-file.png :cmdline -E
 
   +--------------------+
   | x                  |
@@ -41,7 +41,7 @@
 
 * Screen organization
 
-#+begin_src ditaa :exports results :file screen.png :cmdline -E
+#+begin_src ditaa :file screen.png :cmdline -E
   +-----------------------------------+
   | x                                 |
   +-----------------------------------+
