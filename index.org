@@ -72,7 +72,7 @@ Emacs's terminology predates modern naming.
 
 * Frame, window, buffer, file (source)                            :noexport:
 
-#+begin_src ditaa :file frame-window-buffer-file.png :cmdline -E :exports results
+#+begin_src ditaa :file frame-window-buffer-file.png :cmdline -E :exports code
 
   +--------------------+
   | x                  |
@@ -98,7 +98,7 @@ Emacs's terminology predates modern naming.
 
 * Screen organization (source)                                     :noexport:
 
-#+begin_src ditaa :file screen.png :cmdline -E
+#+begin_src ditaa :file screen.png :cmdline -E :exports code
   +-----------------------------------+
   | x                                 |
   +-----------------------------------+
