@@ -1,45 +1,102 @@
+#+TITLE: Emacs me this
+#+SUBTITLE: An intro?
+#+OPTIONS: toc:nil author:nil num:nil
 #+REVEAL_ROOT: file:///..path..to../reveal.js-3.8.0
 #+REVEAL_THEME: White
-#+REVEAL_TITLE_SLIDE: Emacs me this
-* Installing Emacs
+#+REVEAL_INIT_OPTIONS: transition:'none', progress:false, controls:false, center:false, hash: true, border: 0
+#+OPTIONS: reveal_title_slide:"<h1>%t</h1><h3>%s</h3>"
+#+REVEAL_EXTRA_CSS: custom.css
+* Installing Emacs on macOS
 
-- On macOS, I like [[https://github.com/d12frosted/homebrew-emacs-plus][Emacs Plus]].
-- Install via [[https://brew.sh/][homebrew]]:
+I like [[https://github.com/d12frosted/homebrew-emacs-plus][Emacs Plus]]. Install via [[https://brew.sh/][Homebrew]]:
 
 #+begin_src sh
   brew tap d12frosted/emacs-plus
   brew install emacs-plus --without-spacemacs-icon --with-no-frame-refocus
 #+end_src
 
+Create a symbolic link, so it can be opened like any other macOS app:
+
+#+begin_src sh
+  ln -s $(brew --prefix)/Cellar/emacs-plus/*/Emacs.app /Applications/Emacs.app
+#+end_src
+
+There's also [[https://emacsformacosx.com][emacsformacosx.com]]
+- Quicker install, but less configurable
+
+* Terminal vs graphical Emacs
+
+*Run in the terminal*
+
+- Great over ssh.
+
+*Run as a graphical macOS app* (my preference)
+
+- Richer text formatting.
+- View images and pdfs.
+- Native clipboard integration.
+- More key-bindings available.
+
+* Opening Emacs in terminal
+
+#+begin_src sh
+  emacs -nw
+#+end_src
+
+* Opening graphical Emacs on macOS
+
+We can open like any other macOS app (via finder or spotlight).
+
+Or use the command line:
+
+#+begin_src sh
+  open /Applications/Emacs.app
+#+end_src
+
+* Emacs out of the box
+
+[[file:out-of-the-box.png]]
+
 * Frame, window, buffer, file
+
+Emacs's terminology predates modern naming.
 
 | Emacs  | Rest of World        |
 |--------+----------------------|
+|        |                      |
 | Frame  | Window               |
 | Window | Panel                |
 | Buffer | /internal text object/ |
 | Point  | Cursor               |
+|        |                      |
 
-* Frame, window, buffer, file
+* Frame, window, buffer, file (source)                            :noexport:
 
-#+begin_src ditaa :file frame-window-buffer-file.png :cmdline -E
+#+begin_src ditaa :file frame-window-buffer-file.png :cmdline -E :exports results
 
   +--------------------+
   | x                  |
   +--------------------+
-  |                  --|---> text buffer
+  |                *--=|=--> text buffer
   |                    |         |
-  |             window |         +-----> file
+  |             window |         +=--> file
   +--------------------+
-  |                  --|---> text buffer
+  |                *--=|=--> text buffer
   |                    |         |
-  |             window |         +-----> file
+  |             window |         +=--> file
   +--------------------+
           frame
 
 #+end_src
 
-* Screen organization
+#+RESULTS:
+[[file:frame-window-buffer-file.png]]
+
+* Frame, window, buffer, file
+
+[[file:frame-window-buffer-file.png]]
+
+* Screen organization (source)                                     :noexport:
 
 #+begin_src ditaa :file screen.png :cmdline -E
   +-----------------------------------+
@@ -60,11 +117,34 @@
 
 #+end_src
 
+#+RESULTS:
+[[file:screen.png]]
+
+* Screen organization
+
+[[file:screen.png]]
+
+* Basics
+
+- *Quit Emacs* /C-x C-c/ (Control-x, Control-c) [enter joke here]
+- *Open file* /C-x C-f/
+- *Save file* /C-x C-s/
+- *Switch buffer* /C-x b/ (Control-x, b)
+
+* Everything is a command
+
+- *Run command* M-x (M = Meta = Alt), so Alt-x.
+  - M- or Meta in all docs.
+  - /M-x find-file/
+    - Same as /C-x C-f/
+
 * Kill, copy, yank, region
 
-| Emacs  | Rest of World   |
-|--------+-----------------|
-| Kill   | Cut             |
-| Copy   | Save            |
-| Yank   | Paste           |
-| Region | Selection       |
+| Emacs  | Rest of World |
+|--------+---------------|
+|        |               |
+| Kill   | Cut           |
+| Copy   | Save          |
+| Yank   | Paste         |
+| Region | Selection     |
+|        |               |
